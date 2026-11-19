@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa de Aquí · Design Styling & Decor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#inicio" aria-label="Casa de Aquí - Inicio"><img data-k="logo" alt="Casa de Aquí, design styling & decor"></a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+  <ul class="menu" id="menu">
+    <li class="drop" id="drop">
+      <button class="drop-btn" id="dropBtn" aria-expanded="false" aria-haspopup="true"><span data-i="cats">Catálogos</span><span class="caret"></span></button>
+      <ul class="drop-list">
+        <li><a href="#catalogo-productos" data-i="catProd">Catálogo de productos</a></li>
+        <li><a href="#catalogo-colecciones" data-i="catCol">Catálogo de colecciones</a></li>
+      </ul>
+    </li>
+    <li><a href="#portafolio" data-i="port">Portafolio</a></li>
+    <li class="lang-li"><span class="lang" id="lang"><span data-l="en">en</span>/<span data-l="es" class="on">es</span></span></li>
+  </ul>
+</header>
+
+<main>
+<!-- INICIO -->
+<section class="view" id="v-home">
+  <div class="carousel" id="carousel" aria-roledescription="carrusel" aria-label="Productos destacados">
+    <div class="track" id="track"></div>
+    <button class="arrow prev" id="cPrev" aria-label="Anterior"></button>
+    <button class="arrow next" id="cNext" aria-label="Siguiente"></button>
+  </div>
+  <div class="about">
+    <h2 data-i="aboutT">Quiénes somos</h2>
+    <p data-i="aboutP"></p>
+  </div>
+  <div class="cats">
+    <h2 class="t" data-i="cats">Catálogos</h2>
+    <a class="card" href="#catalogo-productos">
+      <div class="ph"><img data-k="sofa-mil" alt="Sofá Milo"></div>
+      <div class="row"><h3 data-i="catProd">Catálogo de productos</h3><span class="pill" data-i="go">ir</span></div>
+    </a>
+    <a class="card" href="#catalogo-colecciones">
+      <div class="ph"><img data-k="coffee-tabl" alt="Mesa de centro Arrecife"></div>
+      <div class="row"><h3 data-i="catCol">Catálogo de colecciones</h3><span class="pill" data-i="go">ir</span></div>
+    </a>
+  </div>
+  <div class="port-prev">
+    <h2 class="t" data-i="port">Portafolio</h2>
+    <div class="strip" id="strip"></div>
+    <div class="more"><a class="pill" href="#portafolio" data-i="more">ver más</a></div>
+  </div>
+</section>
+
+<!-- CATÁLOGO DE PRODUCTOS -->
+<section class="view" id="v-prod">
+  <div class="catpage">
+    <div class="head"><h2 class="t" data-i="catProd">Catálogo de productos</h2></div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<!-- CATÁLOGO DE COLECCIONES -->
+<section class="view" id="v-col">
+  <div class="catpage">
+    <div class="head"><h2 class="t" data-i="catCol">Catálogo de colecciones</h2></div>
+    <div class="colgrid" id="cgrid"></div>
+  </div>
+</section>
+
+<!-- UNA COLECCIÓN -->
+<section class="view" id="v-coldet">
+  <div class="catpage">
+    <div class="head">
+      <h2 class="t" id="colTitle"></h2>
+      <a class="back" href="#catalogo-colecciones" data-i="backCol">Colecciones</a>
+    </div>
+    <div class="pgrid" id="colItems"></div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO (se genera desde js/data.js) -->
+<section class="view" id="v-port"><div id="portSections"></div></section>
+</main>
+
+<footer>
+  <div><b>CASA DE AQUÍ</b><br>Design styling &amp; decor · San José, Costa Rica</div>
+  <div>Roselena Vollbracht, Directora<br>+506 2281-0550 · roselena@casadeaqui.com</div>
+</footer>
+
+<!-- Visor de fotos -->
+<dialog class="lb" id="lb" aria-label="Fotos del producto">
+  <div class="lb-in">
+    <div class="lb-top"><h3 id="lbTitle"></h3><button class="lb-x" id="lbX" aria-label="Cerrar"></button></div>
+    <div class="lb-stage">
+      <button class="arrow prev" id="lbPrev" aria-label="Anterior"></button>
+      <img id="lbImg" alt="">
+      <button class="arrow next" id="lbNext" aria-label="Siguiente"></button>
+    </div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
+  </div>
+</dialog>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
